@@ -11,7 +11,7 @@ RUN npm ci --loglevel=error
 COPY . .
 # Build the app
 RUN npm run build
-# Delete all non-production dependencies to make copy in line 24 more efficient
+# Delete all non-production dependencies to make copy in line 28 more efficient
 RUN npm prune --production
 
 # make image smaller by using multi stage build
