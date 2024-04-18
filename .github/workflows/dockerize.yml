@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # auto-generated
+      DOCKER_BUILDKIT: 1
       
     steps:
     # checkout repository code
@@ -40,5 +41,6 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:${{github.sha}},${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:latest
+        platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
         cache-from: type=registry,ref=${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:cache
         cache-to: type=inline,mode=max
