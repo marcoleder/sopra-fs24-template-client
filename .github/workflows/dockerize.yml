@@ -34,7 +34,7 @@ jobs:
         password: ${{ secrets.dockerhub_password }}
         
     # docker build & push amd64
-    - name: Build and push (including latest tag)
+    - name: Build and push for x64_86 processor architecture
       uses: docker/build-push-action@v5
       with:
         context: .
@@ -46,7 +46,7 @@ jobs:
         cache-to: type=inline,mode=max
         
     # docker build & push arm64
-    - name: Build and push (including latest tag)
+    - name: Build and push for arm64 (Apple M-series) processor architecture
       uses: docker/build-push-action@v5
       with:
         context: .
