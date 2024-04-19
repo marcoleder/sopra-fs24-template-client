@@ -1,4 +1,5 @@
 # SoPra FS24 - Client Template with build pack
+[Docker repository](https://hub.docker.com/repository/docker/marcolederdev/sopra-client-fs24/general)
 
 ## Getting started
 
